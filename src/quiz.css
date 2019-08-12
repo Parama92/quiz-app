@@ -82,7 +82,7 @@ input[type="submit"]:active {
   color: white;
 }
 #scores {
-  width: 500px;
+  width: 100%;
   margin: 50px auto;
   color: rgb(221, 210, 187);
   text-align: center;
