@@ -37,8 +37,9 @@
   }
 }
 .question-container {
-  width: 800px;
+  width: 80%;
   margin: 40px auto;
+  text-align: center;
 }
 .question,
 .option {
@@ -85,4 +86,9 @@ input[type="submit"]:active {
   margin: 50px auto;
   color: rgb(221, 210, 187);
   text-align: center;
+}
+@media screen and (max-width: 617px) {
+  .option {
+    width: 50%;
+  }
 }
