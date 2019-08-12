@@ -9,6 +9,7 @@ class Quiz extends React.Component {
         quiz: [],
         isLoaded: false,
         isComplete: false,
+        overlay: "overlay",
         score: -1
     }
     componentDidMount() {
@@ -17,11 +18,15 @@ class Quiz extends React.Component {
             .then(data => {
                 this.setState({
                     quiz: data,
-                    isLoaded: true
+                    isLoaded: true,
+                    overlay: "hide"
                 })
             })
     }
     handleSubmit = (event) => {
+        this.setState({
+            overlay: "overlay"
+        })
         event.preventDefault();
         const answers = this.state.quiz.map(question => {
             const answer = event.target["ques" + question.id].value;
@@ -40,6 +45,7 @@ class Quiz extends React.Component {
             .then(res => res.json())
             .then(score => {
                 this.setState({
+                    overlay: "hide",
                     isComplete: true,
                     score
                 })
@@ -53,6 +59,9 @@ class Quiz extends React.Component {
                         Quiz&nbsp;&nbsp;
                         <i className="fas fa-angle-double-down"></i>
                     </h1>
+                </div>
+                <div className={this.state.overlay}>
+                    <div className='loading'>Loading...</div>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     {
