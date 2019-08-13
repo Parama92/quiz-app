@@ -13,7 +13,7 @@ class Quiz extends React.Component {
         score: -1
     }
     componentDidMount() {
-        fetch("https://c1397b42.ngrok.io/getQuiz")
+        fetch("https://got-quiz-api.herokuapp.com/getQuiz")
             .then(res => res.json())
             .then(data => {
                 this.setState({
@@ -35,7 +35,7 @@ class Quiz extends React.Component {
                 answer
             }
         })
-        fetch('https://c1397b42.ngrok.io/submitQuiz', {
+        fetch('https://got-quiz-api.herokuapp.com/submitQuiz', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json'
