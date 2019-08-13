@@ -16,7 +16,6 @@ class Quiz extends React.Component {
         fetch("https://got-quiz-api.herokuapp.com/getQuiz")
             .then(res => res.json())
             .then(data => {
-                console.log('received data');
                 this.setState({
                     quiz: data,
                     isLoaded: true,
