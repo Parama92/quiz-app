@@ -57,15 +57,20 @@ class Quiz extends React.Component {
                 <div className='heading'>
                     <h1>
                         Quiz&nbsp;&nbsp;
-                        <i className="fas fa-angle-double-down"></i>
+                        <a href='#q1'><i className="fas fa-angle-double-down"></i>
+                        </a>
                     </h1>
                 </div>
                 <div className={this.state.overlay}>
-                    <div className='loading'>Loading...</div>
+                    <div className='loading'>
+                        <i className="fas fa-question q1"></i>
+                        <i className="fas fa-male"></i>
+                        <i className="fas fa-question q2"></i>
+                    </div>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     {
-                        this.state.quiz.map((question) => <Question key={question.id} {...question} />)
+                        this.state.quiz.map((question, index) => <Question key={question.id} {...question} index={index + 1} />)
                     }
                     <input type="submit" value='Submit Quiz' />
                 </form>

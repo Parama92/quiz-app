@@ -24,6 +24,7 @@
   position: relative;
   animation: bobble 1.5s infinite;
   cursor: pointer;
+  color: rgb(211, 204, 204);
 }
 @keyframes bobble {
   0% {
@@ -106,6 +107,49 @@ input[type="submit"]:active {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.fa-male {
+  font-size: 1.5em;
+}
+.q1,
+.q2 {
+  position: relative;
+  top: -18px;
+  font-size: 0.7em;
+}
+.q1 {
+  transform: rotate(-20deg);
+  animation: bobble-q1 1.5s infinite;
+}
+.q2 {
+  transform: rotate(20deg);
+  animation: bobble-q2 1.5s infinite;
+}
+@keyframes bobble-q1 {
+  0% {
+    top: -18px;
+  }
+  50% {
+    top: -20px;
+    left: -3px;
+  }
+  100% {
+    top: -18px;
+    left: 0;
+  }
+}
+@keyframes bobble-q2 {
+  0% {
+    top: -18px;
+  }
+  50% {
+    top: -20px;
+    right: -3px;
+  }
+  100% {
+    top: -18px;
+    right: 0;
+  }
 }
 @media screen and (max-width: 617px) {
   .option {

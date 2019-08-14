@@ -3,7 +3,7 @@ import React from 'react';
 class Question extends React.Component {
     render() {
         return (
-            <div className='question-container'>
+            <div className='question-container' id={'q' + this.props.index}>
                 <div className='question'>{this.props.question}</div>
                 <input
                     type='radio'
